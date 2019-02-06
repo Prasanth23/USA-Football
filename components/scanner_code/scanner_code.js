@@ -6,68 +6,39 @@ import { event_image, register_input_bg,register,logo } from '../../assets/image
 import { Button_add,Button_next } from "../button";
 import FBFont from '../font';
 
-export default class AddPerson extends Component {
+export default class ScannerCode extends Component {
 
 
     static navigationOptions = {
       
           
         };
-        constructor() {
-            super();
-            this.state = { isChecked01: true};
-        }
+       
 
         jumpTo(route){
             this.props.navigation.navigate(route)
           }
 
-          renderImage = (isChecked) => {
-            let imageSrc = isChecked ? uncheck : check;
-            return (
-                <Image
-                    style={styles.checkBox}
-                    source={imageSrc}
-                />
-            );
-        }
+         
 
           render() {
             return (
                 <SafeAreaView style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
                 <ScrollView>
                     <View style={styles.container}>
-                        <Text style={[FBFont.AlternateGot(23), styles.heading]}>Add another person</Text>
+                        <Text style={[FBFont.AlternateGot(23), styles.heading]}>Enter Passcode</Text>
                         
                         
                         <View style={[styles.shadow,styles.card]}>
-                            <TextInput placeholder="Child" placeholderTextColor={'#000000'} style={[styles.txtInput,styles.mart30]} allowFontScaling={false}></TextInput>
-                            <TextInput placeholder="First Name" placeholderTextColor={'#000000'} style={[styles.txtInput,styles.mart30]} allowFontScaling={false}></TextInput>
-                            <TextInput placeholder="Last Name" placeholderTextColor={'#000000'} style={[styles.txtInput,styles.mart30]} allowFontScaling={false}></TextInput>
-                            <TextInput placeholder="Email Address" placeholderTextColor={'#000000'} style={[styles.txtInput,styles.mart30]} allowFontScaling={false}></TextInput>
-                            <View style={[styles.expiry,styles.txtInputImage,styles.row]}>
-                                    <TextInput placeholder="Expiration Date" placeholderTextColor={'#000000'} allowFontScaling={false} style={styles.creditText}></TextInput>
-                                    <Image source={calendar} style={{ width: 25, height: 25}} resizeMode="cover" />
-                                </View>
-                                <TextInput placeholder="Mobile Number" placeholderTextColor={'#000000'} style={[styles.txtInput,styles.mart30]} allowFontScaling={false}></TextInput>
-                                <View style={[styles.row,styles.agree]}>
-                                <TouchableWithoutFeedback
-                                    style={styles.checkBox}
-                                    onPress={() => this.setState({ isChecked01: !this.state.isChecked01 })}
-                                >
-                                    <View style={[styles.row,{alignItems:"center"}]}>
-                                        {this.renderImage(this.state.isChecked01)}
-                                        <Text style={styles.agreeText}>I certfy that I have legal guardianship of the child I am adding.</Text>
-                                    </View>
-                                </TouchableWithoutFeedback>
-                        
-                            </View>
+                        <Text>To scan for the event please enter the code given to you by the administrator of the event. </Text>
+                        <TextInput placeholder="Code" placeholderTextColor={'#8F0026'} style={styles.txtInput} allowFontScaling={false}></TextInput>
+                            
                             <View style={[styles.row,styles.buttons]}>
                             <View style={styles.btnCancel}>
-                                <Button_next text="Add" height={39} page={()=>{}}/>
+                                <Button_next text="Back" height={39} page={()=>this.jumpTo('Events')}/>
                             </View>
                             <View style={styles.btnNext}>
-                                <Button_next text="Cancel" height={39} page={()=>this.jumpTo('Events')}/>
+                                <Button_next text="Next" height={39} page={()=>this.jumpTo('Scanner')}/>
                             </View>
                         </View>
                         </View>
@@ -130,19 +101,20 @@ export default class AddPerson extends Component {
                 paddingHorizontal:39
             },
             txtInput:{
-                borderBottomWidth:0.3,
-                paddingBottom:3.2,
-                borderColor:'#343741',
+                marginTop:20,
+                borderWidth:1,
+                paddingLeft:5,
+                borderColor:'#8F0026',
                 width:"100%",
                 fontFamily:"Alternategot",
-                fontSize:16
+                fontSize:18
             },
             expiry:{
                 justifyContent:"space-between",
                 marginTop:30
             },
             txtInputImage:{
-                width:"100%",
+                width:"90%",
                 borderBottomWidth:0.3,
                 paddingBottom:3.2,
                 borderColor:'#343741'
@@ -185,8 +157,8 @@ export default class AddPerson extends Component {
             },
             buttons:{
                 justifyContent:"center",
-                marginTop:12.5,
-                marginBottom:25
+                marginTop:25,
+                marginBottom:10
             },
             btnNext:{
                 width:101

@@ -44,7 +44,7 @@ export default class Drawer extends React.Component {
                                             <Text style={[styles.menuText]}>My Events</Text> 
                                         </View>
                                         </TouchableOpacity>
-                                        <TouchableOpacity onPress={()=>{}} >
+                                        <TouchableOpacity onPress={()=>this.jumpTo('MyProfileMain')} >
                                         <View style={[styles.menuItem]}>
                                             <Image source={my_profile} style={{width:25,height:25}}/>
                                             <Text style={[styles.menuText]}>My Profile</Text> 
@@ -62,7 +62,7 @@ export default class Drawer extends React.Component {
                                             <Text style={[styles.menuText]}>My Certifications</Text> 
                                         </View>
                                         </TouchableOpacity>
-                                        <TouchableOpacity onPress={()=>{}} >
+                                        <TouchableOpacity onPress={()=>this.jumpTo('ScannerMain')} >
                                         <View style={[styles.menuItem]}>
                                             <Image source={scanner} style={{width:25,height:25}}/>
                                             <Text style={[styles.menuText]}>Scanner</Text> 

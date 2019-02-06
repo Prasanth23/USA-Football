@@ -6,7 +6,7 @@ import { event_image, register_input_bg,register,logo } from '../../assets/image
 import { Button_add,Button_next } from "../button";
 import FBFont from '../font';
 
-export default class AddPerson extends Component {
+export default class Profile extends Component {
 
 
     static navigationOptions = {
@@ -15,7 +15,7 @@ export default class AddPerson extends Component {
         };
         constructor() {
             super();
-            this.state = { isChecked01: true};
+            
         }
 
         jumpTo(route){
@@ -37,37 +37,23 @@ export default class AddPerson extends Component {
                 <SafeAreaView style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
                 <ScrollView>
                     <View style={styles.container}>
-                        <Text style={[FBFont.AlternateGot(23), styles.heading]}>Add another person</Text>
+                        <Text style={[FBFont.AlternateGot(23), styles.heading]}>My Profile</Text>
                         
                         
                         <View style={[styles.shadow,styles.card]}>
-                            <TextInput placeholder="Child" placeholderTextColor={'#000000'} style={[styles.txtInput,styles.mart30]} allowFontScaling={false}></TextInput>
+                            
                             <TextInput placeholder="First Name" placeholderTextColor={'#000000'} style={[styles.txtInput,styles.mart30]} allowFontScaling={false}></TextInput>
                             <TextInput placeholder="Last Name" placeholderTextColor={'#000000'} style={[styles.txtInput,styles.mart30]} allowFontScaling={false}></TextInput>
                             <TextInput placeholder="Email Address" placeholderTextColor={'#000000'} style={[styles.txtInput,styles.mart30]} allowFontScaling={false}></TextInput>
                             <View style={[styles.expiry,styles.txtInputImage,styles.row]}>
-                                    <TextInput placeholder="Expiration Date" placeholderTextColor={'#000000'} allowFontScaling={false} style={styles.creditText}></TextInput>
+                                    <TextInput placeholder="Birthdate" placeholderTextColor={'#000000'} allowFontScaling={false} style={styles.creditText}></TextInput>
                                     <Image source={calendar} style={{ width: 25, height: 25}} resizeMode="cover" />
                                 </View>
                                 <TextInput placeholder="Mobile Number" placeholderTextColor={'#000000'} style={[styles.txtInput,styles.mart30]} allowFontScaling={false}></TextInput>
-                                <View style={[styles.row,styles.agree]}>
-                                <TouchableWithoutFeedback
-                                    style={styles.checkBox}
-                                    onPress={() => this.setState({ isChecked01: !this.state.isChecked01 })}
-                                >
-                                    <View style={[styles.row,{alignItems:"center"}]}>
-                                        {this.renderImage(this.state.isChecked01)}
-                                        <Text style={styles.agreeText}>I certfy that I have legal guardianship of the child I am adding.</Text>
-                                    </View>
-                                </TouchableWithoutFeedback>
-                        
-                            </View>
+                                
                             <View style={[styles.row,styles.buttons]}>
-                            <View style={styles.btnCancel}>
-                                <Button_next text="Add" height={39} page={()=>{}}/>
-                            </View>
                             <View style={styles.btnNext}>
-                                <Button_next text="Cancel" height={39} page={()=>this.jumpTo('Events')}/>
+                                <Button_next text="Continue" height={39} page={()=>this.jumpTo('Events')}/>
                             </View>
                         </View>
                         </View>
@@ -185,8 +171,8 @@ export default class AddPerson extends Component {
             },
             buttons:{
                 justifyContent:"center",
-                marginTop:12.5,
-                marginBottom:25
+                marginTop:25,
+                marginBottom:10
             },
             btnNext:{
                 width:101
