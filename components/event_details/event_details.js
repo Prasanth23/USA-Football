@@ -5,20 +5,16 @@ import { back_arrow,invite, location, calendar, time, scanner } from '../../asse
 import { event_image, register_input_bg,register,logo } from '../../assets/images/index';
 
 export default class EventDetails extends Component {
-//     static navigationOptions = ({ navigation }) => {
-//         return {
-//         //   headerTitle: <LogoTitle />,
-//           headerLeft: (
-//             navigation.state.index > 0 ? (<TouchableOpacity style={{marginLeft: 5}} onPress={() => navigation.dispatch(backAction) }><Image source={require('../../assets/icons/back_arrow/Back_Arrow.png')}
-//   resizeMode='contain' style={{width:25, height:16.5}}/></TouchableOpacity>) : null
-//           ),
-//         };
-//       };
+
 
 static navigationOptions = {
-    //   title:"Events",
-      drawerLockMode: 'locked-closed'
+  
+      
     };
+
+    registerEvent(){
+        this.props.navigation.navigate('Attendee')
+    }
 
   render() {
     return (
@@ -50,7 +46,7 @@ static navigationOptions = {
                         <View style={[styles.row,styles.total]}>
                             <View>
                                 <Text>ATTENDEES</Text>
-                                <Text style={styles.strong}>300</Text>
+                                <Text style={[styles.strong, styles.center]}>300</Text>
                             </View>
                             <View style={[styles.row,styles.cost]}>
                                 <Text style={[styles.strong,styles.athelete]}>$ 80</Text>
@@ -64,7 +60,7 @@ static navigationOptions = {
                         <Text style={styles.eventDesc}>
                             It may be America’s sport, but competition comes from all over the world. Come see the top football players from the U.S.,Mexico, Japan, Canada, Panama and more compete at the tenth annual International Bowl. It may be America’s sport, but competition comes from all over the world. 
                         </Text>
-                        <TouchableOpacity onPress={()=>{}}>
+                        <TouchableOpacity onPress={()=>this.registerEvent()}>
                             <View>
                                 <Text style={styles.register}>Register Now</Text>
                             </View>
@@ -104,6 +100,9 @@ const styles=StyleSheet.create({
   },
   strong:{
     fontWeight:"bold",
+  },
+  center:{
+      textAlign:'center'
   },
   image2:{
       width:"100%",

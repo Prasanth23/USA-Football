@@ -6,6 +6,12 @@ import Contact from './contact/contact';
 import Register from './register/register';
 import EventDetails from './event_details/event_details';
 import EventList from './event_list/event_list';
+import Attendee from './attendee/attendee';
+import PaymentInfo from './payment_info/payment_info';
+import RegistrationReview from './registration_review/registration_review';
+import RegistrationDone from './registration_done/registration_done';
+import MyEvents from './my_events/my_events';
+import AddPerson from './add_person/add_person';
 
 
 import { createStackNavigator, createSwitchNavigator, NavigationActions, DrawerActions, createDrawerNavigator, createNavigationContainer,SafeAreaView, DrawerItems} from 'react-navigation';
@@ -25,7 +31,49 @@ const EventStack = createStackNavigator(
       navigationOptions: {
         header: null
     }
+    },
+    Attendee: {
+      screen: Attendee,
+      navigationOptions: {
+        header: null
     }
+    },
+    AddPerson: {
+      screen: AddPerson,
+      navigationOptions: {
+        header: null
+    }
+    },
+    PaymentInfo: {
+      screen: PaymentInfo,
+      navigationOptions: {
+        header: null
+    }
+    },
+    RegistrationReview: {
+      screen: RegistrationReview,
+      navigationOptions: {
+        header: null
+    }
+    },
+    RegistrationDone: {
+      screen: RegistrationDone,
+      navigationOptions: {
+        header: null
+    }
+    }
+  },
+  {
+    headerMode: 'none',
+  }
+);
+
+const MyEventsStack = createStackNavigator(
+  {
+    MyEvents: {
+      screen: MyEvents,
+    },
+    
   },
   {
     headerMode: 'none',
@@ -69,6 +117,9 @@ const RootStack = createStackNavigator(
     Home: {
       screen: EventStack,
     },
+    MyEventsMain: {
+      screen: MyEventsStack,
+    },
   },
   {
     mode: 'modal',
@@ -96,7 +147,38 @@ EventStack.navigationOptions = ({ navigation }) => {
   
 
  
-  let headerTitle = <Image source={require('../assets/icons/header_logo/header_logo.png')} style={{ width: 95, height: 35, flex:1, alignSelf: 'center', marginRight:60}} resizeMode="contain" /> ;
+  let headerTitle = <Image source={require('../assets/icons/header_logo/header_logo.png')} style={{ width: 95, height: 35, flex:1, alignSelf: 'center', marginRight:40}} resizeMode="contain" /> ;
+  const drawerAction = DrawerActions.openDrawer()
+  const backAction = NavigationActions.back()
+
+   const headerRight =<View></View>
+  const headerLeft=navigation.state.index > 0 ? (<TouchableOpacity style={{marginLeft: 5}} onPress={() => navigation.dispatch(backAction) }><Image source={require('../assets/icons/back_arrow/Back_Arrow.png')}
+  resizeMode='cover' style={{width:17.8, height:13.2}}/></TouchableOpacity>) : <TouchableOpacity style={{marginLeft: 10}} onPress={() => navigation.dispatch(drawerAction) }><Image source={require('../assets/icons/hamburguer/hamburguer.png')}
+  resizeMode='contain' style={{width:25, height:16.5}}/></TouchableOpacity>
+
+  return {
+    headerRight: headerRight,
+    headerTitle: headerTitle,
+    headerLeft: headerLeft,
+    headerStyle: {
+      backgroundColor: '#001F46',
+      borderBottomColor: '#e2e2e2'
+    },
+    headerTitleStyle: { 
+      
+    },
+    headerTintColor: '#333333',
+    
+    gesturesEnabled: false
+  };
+}
+
+MyEventsStack.navigationOptions = ({ navigation }) => {
+  const { routeName } = navigation.state.routes[navigation.state.index];
+  
+
+ 
+  let headerTitle = <Image source={require('../assets/icons/header_logo/header_logo.png')} style={{ width: 95, height: 35, flex:1, alignSelf: 'center', marginRight:40}} resizeMode="contain" /> ;
   const drawerAction = DrawerActions.openDrawer()
   const backAction = NavigationActions.back()
 

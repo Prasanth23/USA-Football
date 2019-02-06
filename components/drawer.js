@@ -38,7 +38,7 @@ export default class Drawer extends React.Component {
                                               <Text style={[styles.menuText]}>Find Events</Text> 
                                             </View>
                                             </TouchableOpacity>
-                                            <TouchableOpacity onPress={()=>{}} >
+                                            <TouchableOpacity onPress={()=>this.jumpTo('MyEventsMain')} >
                                         <View style={[styles.menuItem]}>
                                             <Image source={my_events} style={{width:25,height:25}}/>
                                             <Text style={[styles.menuText]}>My Events</Text> 

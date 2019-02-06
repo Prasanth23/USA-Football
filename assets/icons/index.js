@@ -9,11 +9,16 @@ export const my_certifications = require('./my_certifications/My_Certifications.
 export const scanner = require('./scanner/Scanner.png');
 export const location = require('./location/Location.png');
 export const invite = require('./invite/Invite.png');
-export const calendar = require('./calender_red/Calendar_red.png');
-// export const calendar = require('./calendar2/Calendar.png');
+export const calendar_red = require('./calender_red/Calendar_red.png');
+export const calendar = require('./calendar/Calendar.png');
+// export const calendar = require('./calendar/Calendar.png');
 export const search = require('./search/Search.png');
 export const time = require('./time/Time.png');
 export const time_red = require('./time_red/Time_red.png');
+export const check = require('./checkbox/check.png');
+export const uncheck = require('./checkbox/uncheck.png');
+export const add_another = require('./add_another/Add_another.png');
+export const tick_gray = require('./tick_gray/Payment.png');
 
 
 

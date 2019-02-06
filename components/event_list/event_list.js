@@ -17,6 +17,10 @@ eventDetails(){
   this.props.navigation.navigate('EventDetail')
 }
 
+registerEvent(){
+    this.props.navigation.navigate('Attendee')
+}
+
   render() {
     return (
       <View style={styles.container}>
@@ -72,7 +76,7 @@ eventDetails(){
                                         </View>
                                     </View>
                                     <View style={styles.line}></View>
-                                    <TouchableOpacity onPress={()=>{}} style={styles.bgColor}>
+                                    <TouchableOpacity onPress={()=>this.registerEvent()} style={styles.bgColor}>
                                         <View>
                                             <Text style={styles.bottomText}>Register Now</Text>
                                         </View>
@@ -89,11 +93,11 @@ eventDetails(){
                                 <View style={styles.eventStyle}>
                                     <View style={styles.nameLocation}>
                                         <View>
-                                            <Text style={[styles.wrap,styles.eventName]}>MIDDLE SCHOOL BOWL GAME SERIES</Text>
+                                            <Text style={[styles.wrap,styles.eventName]}>THE BEST HIGH SCHOOL FOOTBALL WORLDWIDE</Text>
                                         </View>
                                         <View style={styles.row}>
                                             <Image source={location} style={{marginTop:3,width:10,height:16}} resizeMode="contain"/>
-                                            <Text style={[styles.wrap,styles.txt]}>High School Training Camp - Canton</Text>
+                                            <Text style={[styles.wrap,styles.txt]}>AT&T Stadium, Arlington, United States</Text>
                                         </View>
                                     </View>
                                     <View style={styles.dateTime}>
@@ -115,7 +119,7 @@ eventDetails(){
                                         </View>
                                     </View>
                                     <View style={styles.line}></View>
-                                    <TouchableOpacity onPress={()=>{}} style={styles.bgColor}>
+                                    <TouchableOpacity onPress={()=>this.registerEvent()} style={styles.bgColor}>
                                         <View>
                                             <Text style={styles.bottomText}>Register Now</Text>
                                         </View>
