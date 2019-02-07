@@ -19,6 +19,7 @@ export const check = require('./checkbox/check.png');
 export const uncheck = require('./checkbox/uncheck.png');
 export const add_another = require('./add_another/Add_another.png');
 export const tick_gray = require('./tick_gray/Payment.png');
+export const edit = require('./edit/Edit.png');
 
 
 
