@@ -50,7 +50,7 @@ export default class Drawer extends React.Component {
                                             <Text style={[styles.menuText]}>My Profile</Text> 
                                         </View>
                                         </TouchableOpacity>
-                                        <TouchableOpacity onPress={()=>{}} >
+                                        <TouchableOpacity onPress={()=>this.jumpTo('RelationshipsMain')} >
                                         <View style={[styles.menuItem]}>
                                             <Image source={my_relationships} style={{width:25,height:25}}/>
                                             <Text style={[styles.menuText]}>My Relationships</Text> 

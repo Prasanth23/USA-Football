@@ -15,6 +15,9 @@ import AddPerson from './add_person/add_person';
 import Scanner from './scanner/scanner';
 import ScannerCode from './scanner_code/scanner_code';
 import Profile from './profile/profile';
+import MyRelationships from './my_relationships/my_relationships';
+import AddRelation from './add_relation/add_relation';
+import MyCertificates from './my_certificates/my_certificates';
 
 
 import { createStackNavigator, createSwitchNavigator, NavigationActions, DrawerActions, createDrawerNavigator, createNavigationContainer,SafeAreaView, DrawerItems} from 'react-navigation';
@@ -94,6 +97,20 @@ const MyProfileStack = createStackNavigator(
   }
 );
 
+const RelationshipsStack = createStackNavigator(
+  {
+    MyRelationships: {
+      screen: MyRelationships,
+    },
+    AddRelation: {
+      screen: AddRelation,
+    },
+  },
+  {
+    headerMode: 'none',
+  }
+);
+
 const ScannerStack = createStackNavigator(
   {
     ScannerCode: {
@@ -150,6 +167,9 @@ const RootStack = createStackNavigator(
     },
     MyProfileMain: {
       screen: MyProfileStack,
+    },
+    RelationshipsMain: {
+      screen: RelationshipsStack,
     },
     ScannerMain: {
       screen: ScannerStack,
@@ -239,6 +259,37 @@ MyEventsStack.navigationOptions = ({ navigation }) => {
 }
 
 MyProfileStack.navigationOptions = ({ navigation }) => {
+  const { routeName } = navigation.state.routes[navigation.state.index];
+  
+
+ 
+  let headerTitle = <Image source={require('../assets/icons/header_logo/header_logo.png')} style={{ width: 95, height: 35, flex:1, alignSelf: 'center', marginRight:40}} resizeMode="contain" /> ;
+  const drawerAction = DrawerActions.openDrawer()
+  const backAction = NavigationActions.back()
+
+   const headerRight =<View></View>
+  const headerLeft=navigation.state.index > 0 ? (<TouchableOpacity style={{marginLeft: 5}} onPress={() => navigation.dispatch(backAction) }><Image source={require('../assets/icons/back_arrow/Back_Arrow.png')}
+  resizeMode='cover' style={{width:17.8, height:13.2}}/></TouchableOpacity>) : <TouchableOpacity style={{marginLeft: 10}} onPress={() => navigation.dispatch(drawerAction) }><Image source={require('../assets/icons/hamburguer/hamburguer.png')}
+  resizeMode='contain' style={{width:25, height:16.5}}/></TouchableOpacity>
+
+  return {
+    headerRight: headerRight,
+    headerTitle: headerTitle,
+    headerLeft: headerLeft,
+    headerStyle: {
+      backgroundColor: '#001F46',
+      borderBottomColor: '#e2e2e2'
+    },
+    headerTitleStyle: { 
+      
+    },
+    headerTintColor: '#333333',
+    
+    gesturesEnabled: false
+  };
+}
+
+RelationshipsStack.navigationOptions = ({ navigation }) => {
   const { routeName } = navigation.state.routes[navigation.state.index];
   
 

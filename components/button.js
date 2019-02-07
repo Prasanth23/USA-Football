@@ -25,6 +25,19 @@ export class Button_next extends Component{
     }
 }
 
+export class Button_edit extends Component {
+    render() {
+        return (
+            <TouchableOpacity onPress={this.props.page}>
+                <View style={[styles.row,styles.btn_edit]} height={this.props.height}>
+                    <Image source={this.props.image} style={{width:15,height:19}} resizeMode="cover"/>
+                    {/* <Text style={[styles.btn_add_text,styles.btn_text]}>{this.props.text}</Text> */}
+                </View>
+            </TouchableOpacity>
+        );
+    }
+}
+
 const styles=StyleSheet.create({
     row:{
         flexDirection:"row"
@@ -39,6 +52,14 @@ const styles=StyleSheet.create({
         width:"100%",
         // height:35,
         borderRadius:5,
+        justifyContent:"center",
+        alignItems:"center"
+    },
+    btn_edit:{
+        backgroundColor:'#002957',
+        width:60,
+        height:90,
+        borderRadius:0.3,
         justifyContent:"center",
         alignItems:"center"
     },
