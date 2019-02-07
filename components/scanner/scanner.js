@@ -18,7 +18,7 @@ export default class Scanner extends React.Component {
     const { hasCameraPermission } = this.state;
 
     if (hasCameraPermission === null) {
-      return <Text>Requesting for camera permission</Text>;
+      return <Text></Text>;
     }
     if (hasCameraPermission === false) {
       return <Text>No access to camera</Text>;
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         height: 450
     },
     scanArea:{
-        width: 240,
+        width: 300,
         height:200,
         alignSelf: 'center',
         marginTop: 100
