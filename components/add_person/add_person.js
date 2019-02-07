@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, TextInput, View,StyleSheet,Image,ScrollView,TouchableOpacity,SafeAreaView,TouchableWithoutFeedback } from 'react-native';
-
+import DateTimePicker from 'react-native-modal-datetime-picker';
 import { tick_gray, calendar,check, uncheck } from '../../assets/icons/index';
 import { event_image, register_input_bg,register,logo } from '../../assets/images/index';
 import { Button_add,Button_next } from "../button";
@@ -8,15 +8,24 @@ import FBFont from '../font';
 
 export default class AddPerson extends Component {
 
-
+   
     static navigationOptions = {
       
           
         };
         constructor() {
             super();
-            this.state = { isChecked01: true};
+            this.state = {isDateTimePickerVisible: false, isChecked01: true};
         }
+
+        // _showDateTimePicker = () => this.setState({ isDateTimePickerVisible: true });
+
+        // _hideDateTimePicker = () => this.setState({ isDateTimePickerVisible: false });
+
+        // _handleDatePicked = (date) => {
+        //     console.log('A date has been picked: ', date);
+        //     this._hideDateTimePicker();
+        // };
 
         jumpTo(route){
             this.props.navigation.navigate(route)
@@ -38,7 +47,11 @@ export default class AddPerson extends Component {
                 <ScrollView>
                     <View style={styles.container}>
                         <Text style={[FBFont.AlternateGot(23), styles.heading]}>Add another person</Text>
-                        
+                        {/* <DateTimePicker
+                        isVisible={this.state.isDateTimePickerVisible}
+                        onConfirm={this._handleDatePicked}
+                        onCancel={this._hideDateTimePicker}
+                        /> */}
                         
                         <View style={[styles.shadow,styles.card]}>
                             <TextInput placeholder="Child" placeholderTextColor={'#000000'} style={[styles.txtInput,styles.mart30]} allowFontScaling={false}></TextInput>
@@ -47,7 +60,9 @@ export default class AddPerson extends Component {
                             <TextInput placeholder="Email Address" placeholderTextColor={'#000000'} style={[styles.txtInput,styles.mart30]} allowFontScaling={false}></TextInput>
                             <View style={[styles.expiry,styles.txtInputImage,styles.row]}>
                                     <TextInput placeholder="Expiration Date" placeholderTextColor={'#000000'} allowFontScaling={false} style={styles.creditText}></TextInput>
+                                    {/* <TouchableOpacity onPress={this._showDateTimePicker}> */}
                                     <Image source={calendar} style={{ width: 25, height: 25}} resizeMode="cover" />
+                                    {/* </TouchableOpacity> */}
                                 </View>
                                 <TextInput placeholder="Mobile Number" placeholderTextColor={'#000000'} style={[styles.txtInput,styles.mart30]} allowFontScaling={false}></TextInput>
                                 <View style={[styles.row,styles.agree]}>

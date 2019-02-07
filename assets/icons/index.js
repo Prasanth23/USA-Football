@@ -20,6 +20,7 @@ export const uncheck = require('./checkbox/uncheck.png');
 export const add_another = require('./add_another/Add_another.png');
 export const tick_gray = require('./tick_gray/Payment.png');
 export const edit = require('./edit/Edit.png');
+export const certificate01 = require('./certificates01/Certification_1.png');
 
 
 
