@@ -11,15 +11,14 @@ var FBFont = {
   async loadFonts() {
     await Font.loadAsync({
       'Alternategot': require('../assets/fonts/AlternateGotNo3DOT/AlternateGotNo3DOT.otf'),
-      'FiraSans_Medium': require('../assets/fonts/FiraSans/FiraSans-Medium.ttf'),
-      'FiraSans_Bold': require('../assets/fonts/FiraSans/FiraSans-Bold.ttf'),
-      'FiraSans_BoldItalic': require('../assets/fonts/FiraSans/FiraSans-BoldItalic.ttf'),
-      'FiraSans_Italic': require('../assets/fonts/FiraSans/FiraSans-Italic.ttf'),
-      'FiraSans_Light': require('../assets/fonts/FiraSans/FiraSans-Light.ttf'),
-      'FiraSans_LightItalic': require('../assets/fonts/FiraSans/FiraSans-LightItalic.ttf'),
-      // 'FiraSans_Medium': require('../assets/fonts/FiraSans/FiraSans-Medium.ttf'),
-      'FiraSans_MediumItalic': require('../assets/fonts/FiraSans/FiraSans-MediumItalic.ttf'),
-      'FiraSans_Regular': require('../assets/fonts/FiraSans/FiraSans-Regular.ttf')
+      'FiraSans-Regular': require('../assets/fonts/FiraSans/FiraSans-Regular.ttf'),
+      'FiraSans-Medium': require('../assets/fonts/FiraSans/FiraSans-Medium.ttf'),
+      'FiraSans-Bold': require('../assets/fonts/FiraSans/FiraSans-Bold.ttf'),
+      'FiraSans-BoldItalic': require('../assets/fonts/FiraSans/FiraSans-BoldItalic.ttf'),
+      'FiraSans-Italic': require('../assets/fonts/FiraSans/FiraSans-Italic.ttf'),
+      'FiraSans-Light': require('../assets/fonts/FiraSans/FiraSans-Light.ttf'),
+      'FiraSans-LightItalic': require('../assets/fonts/FiraSans/FiraSans-LightItalic.ttf'),
+      'FiraSans-MediumItalic': require('../assets/fonts/FiraSans/FiraSans-MediumItalic.ttf')
     });
   },
 
@@ -29,52 +28,53 @@ var FBFont = {
       fontSize : getSize(size)
     };
   },
-  FiraSansMedium(size: Number) {
-    return {
-      fontFamily : 'FiraSans_Medium',
-      fontSize : getSize(size)
-    };
-  },
   FiraSansRegular(size: Number) {
     return {
-      fontFamily : 'FiraSans_Regular',
+      fontFamily : 'FiraSans-Regular',
       fontSize : getSize(size)
     };
   },
+  FiraSansMedium(size: Number) {
+    return {
+      fontFamily : 'FiraSans-Medium',
+      fontSize : getSize(size)
+    };
+  },
+   
   FiraSansBold(size: Number) {
     return {
-      fontFamily : 'FiraSans_Bold',
+      fontFamily : 'FiraSans-Bold',
       fontSize : getSize(size)
     };
   },
   FiraSansBoldItalic(size: Number) {
     return {
-      fontFamily : 'FiraSans_BoldItalic',
+      fontFamily : 'FiraSans-BoldItalic',
       fontSize :  getSize(size)
     };
   },
   FiraSansItalic(size: Number) {
     return {
-      fontFamily : 'FiraSans_Italic',
+      fontFamily : 'FiraSans-Italic',
       fontSize :  getSize(size)
     };
   },
   FiraSansLight(size: Number) {
     return {
-      fontFamily : 'FiraSans_Light',
+      fontFamily : 'FiraSans-Light',
       fontSize :  getSize(size)
     };
   },
   FiraSansLightItalic(size: Number) {
     return {
-      fontFamily : 'FiraSans_LightItalic',
+      fontFamily : 'FiraSans-LightItalic',
       fontSize : getSize(size)
     };
   },
   
   FiraSansMediumItalic(size: Number) {
     return {
-      fontFamily : 'FiraSans_MediumItalic',
+      fontFamily : 'FiraSans-MediumItalic',
       fontSize : getSize(size)
     };
   }
